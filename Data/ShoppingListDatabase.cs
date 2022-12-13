@@ -83,6 +83,16 @@ namespace Sugaru_Iulia_Lab7.Data
             + " on P.ID = LP.ProductID where LP.ShopListID = ?",
             shoplistid);
         }
+
+        public Task<int> DeleteListProductAsync(ListProduct listp)
+        {
+            return _database.DeleteAsync(listp);
+        }
+
+        public Task<List<ListProduct>> GetListProducts()
+        {
+            return _database.QueryAsync<ListProduct>("select * from ListProduct");
+        }
     }
 
 }
