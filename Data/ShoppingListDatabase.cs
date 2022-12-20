@@ -67,6 +67,10 @@ namespace Sugaru_Iulia_Lab7.Data
         {
             return _database.DeleteAsync(slist);
         }
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
+        }
         public Task<int> SaveListProductAsync(ListProduct listp)
         {
             if (listp.ID != 0)
